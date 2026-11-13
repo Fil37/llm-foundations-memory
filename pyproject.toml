@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-foundations-memory"
+version = "0.1.0"
+description = "Local LLM prompts, structured output, and bounded conversational memory"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain>=1.0",
+    "langchain-core>=1.0",
+    "langchain-ollama>=1.0",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools]
+py-modules = ["config", "main", "memory", "structured_output"]
+
+[tool.pytest.ini_options]
+testpaths = ["test_memory.py"]
