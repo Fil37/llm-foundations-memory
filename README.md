@@ -38,3 +38,21 @@ dans `structured_output.py`.
 ```bash
 pytest
 ```
+
+## Variables d’environnement
+
+- `OLLAMA_MODEL` : modèle local (défaut `llama3.2`).
+- `OLLAMA_BASE_URL` : URL du serveur Ollama (défaut `http://localhost:11434`).
+- `MAX_HISTORY_TOKENS` : budget indicatif de l’historique (défaut `388`, doit être positif).
+
+## Exemple de sortie structurée
+
+Exemple indicatif conforme au schéma Pydantic `ReviewOutput` :
+
+```json
+{
+  "summary": "Le retour apprécie l’interface et signale un chargement lent.",
+  "positive_points": ["L’interface est appréciée."],
+  "improvement_points": ["Améliorer la vitesse de chargement."]
+}
+```
